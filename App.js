@@ -12,6 +12,7 @@ import Status from './src/screens/Status';
 import FriendProfile from './src/screens/FriendProfile';
 import EditProfile from './src/screens/EditProfile';
 import Ionic from 'react-native-vector-icons/Ionicons'
+import Chart from './src/screens/Chart';
 
 
 const App = () => {
@@ -49,7 +50,7 @@ const App = () => {
       >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Search" component={Search} />
-        <Tab.Screen name="Activity" component={Activity} />
+        <Tab.Screen name="Activity" component={Chart} />
         <Tab.Screen name="Profile" component={CarMonitor} />
       </Tab.Navigator>
     )
