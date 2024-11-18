@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { RadialSlider } from 'react-native-radial-slider';
 
-const Speedometer = ({ speed }) => {
+const Speedometer = ({ speed, maxSpeed }) => {
   const [currentSpeed, setCurrentSpeed] = useState(speed);
 
   useEffect(() => {
@@ -13,17 +13,25 @@ const Speedometer = ({ speed }) => {
     <View style={styles.container}>
       {/* RadialSlider를 이용한 속도계 */}
       <RadialSlider
-        variant="speedometer-marker"  // 기본 속도계 스타일
+        // variant="speedometer-marker"  // 기본 속도계 스타일
         value={currentSpeed}
         unit='KM/h'
         min={0}
-        max={200}
+        max={maxSpeed}
+        step={1}
+        // markerValue={'markerValue'}
+        markerLineSize={30}
+        buttonContainerStyle={styles.sliderButton}
+        valueStyle={styles.sliderValue}
+        subTitleStyle={styles.sliderSubTitle}
+        unitStyle={styles.sliderUnit}
         onChange={setCurrentSpeed}  // 속도 변경 시 상태 업데이트
         style={styles.slider}
+        subTitle='2000 rpm'
       />
       
       {/* 현재 속도 텍스트 */}
-      <Text style={styles.speedText}>{currentSpeed} km/h</Text>
+      {/* <Text style={styles.speedText}>{currentSpeed} km/h</Text> */}
     </View>
   );
 };
@@ -32,7 +40,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 20,
+    marginVertical: 0,
   },
   slider: {
     width: 200,  // RadialSlider 크기 조정
@@ -44,6 +52,20 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: 10,
   },
+  sliderButton: {
+    display: 'none'
+  },
+  sliderValue: {
+    fontWeight: "bold",
+    color: "white",
+  },
+  sliderSubTitle: {
+    color: '#A0A0A0',
+  },
+  sliderUnit: {
+    color: '#A0A0A0',
+  }
+
 });
 
 export default Speedometer;

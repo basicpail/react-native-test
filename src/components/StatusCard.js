@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Switch, ProgressBarAndroid } from 'react-native';
+// import { View, Text, StyleSheet, Switch, ProgressBarAndroid } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const iconMapping = {
@@ -19,7 +20,7 @@ const StatusCard = ({ label, value, progress }) => {
       <Icon name={iconMapping[label]} size={24} color="#00AEEF" style={styles.icon} />
       <Text style={styles.label}>{label}</Text>
       <Text style={styles.value}>{value}</Text>
-      <Switch
+      {/* <Switch
         trackColor={{ false: "#767577", true: "#81b0ff" }}
         thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
         onValueChange={toggleSwitch}
@@ -32,7 +33,7 @@ const StatusCard = ({ label, value, progress }) => {
         progress={progress}
         color="#00AEEF"
         style={styles.progress}
-      />
+      /> */}
     </View>
   );
 };
