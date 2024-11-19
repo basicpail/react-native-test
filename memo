@@ -2,3 +2,6 @@ react-native-svg 는 3.4.0 버전으로 설치
 react-native-reanimated 는 2.9.1 버전으로 설치
 react-native-gesture-handler 는 2.6.0으로 설치
 babel.config에서 plugins 등록
+
+배경색 23 32 52
+Status Card 색 12 20 31

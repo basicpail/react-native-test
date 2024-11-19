@@ -11,8 +11,10 @@ import CarMonitor from './src/screens/CarMonitor';
 import Status from './src/screens/Status';
 import FriendProfile from './src/screens/FriendProfile';
 import EditProfile from './src/screens/EditProfile';
+import IconOcticons from 'react-native-vector-icons/Octicons';
 import Ionic from 'react-native-vector-icons/Ionicons'
 import Chart from './src/screens/Chart';
+import StatusDetail from './src/screens/StatusDetail';
 
 
 const App = () => {
@@ -35,10 +37,10 @@ const App = () => {
               iconName = focused ? 'home-sharp' : 'home-outline';
             } else if (route.name === 'Search') {
               // iconName = focused ? 'search' : 'ios-search-outline';
-              iconName = focused ? 'search' : 'search-outline';
+              iconName = focused ? 'list-sharp' : 'list-outline';
             } else if (route.name === 'Activity') {
               // iconName = focused ? 'ios-heart' : 'ios-heart-outline';
-              iconName = focused ? 'ios-heart' : 'heart-outline';
+              iconName = focused ? 'bar-chart-sharp' : 'bar-chart-outline';
             } else if (route.name === 'Profile') {
               // iconName = focused ? 'ios-person-circle' : 'ios-person-outline';
               iconName = focused ? 'person-circle' : 'person-outline';
@@ -48,10 +50,10 @@ const App = () => {
           }
         })}
       >
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Search" component={Search} />
+        <Tab.Screen name="Home" component={CarMonitor} />
+        <Tab.Screen name="Search" component={StatusDetail} />
         <Tab.Screen name="Activity" component={Chart} />
-        <Tab.Screen name="Profile" component={CarMonitor} />
+        <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>
     )
   }
